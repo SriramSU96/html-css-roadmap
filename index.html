@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>15-Day HTML + CSS Roadmap</title>
+  <style>
+    body {
+      font-family: Georgia, serif;
+      background-color: #f9f6ef;
+      color: #2e3d2f;
+      padding: 40px;
+      line-height: 1.6;
+    }
+    h1 {
+      text-align: center;
+      font-size: 2em;
+      margin-bottom: 30px;
+      border-bottom: 2px solid #d4af37;
+      display: inline-block;
+      padding-bottom: 10px;
+    }
+    .day {
+      background: #fff;
+      border-left: 6px solid #2e3d2f;
+      padding: 20px;
+      margin-bottom: 30px;
+      border-radius: 10px;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+    }
+    .day h2 {
+      color: #2e3d2f;
+      margin-top: 0;
+      font-size: 1.2em;
+      border-bottom: 1px dashed #d4af37;
+      padding-bottom: 6px;
+      margin-bottom: 15px;
+    }
+    .topic {
+      margin: 8px 0;
+    }
+    input[type="checkbox"] {
+      margin-right: 10px;
+      transform: scale(1.2);
+      accent-color: #2e3d2f;
+    }
+    a {
+      color: #2e3d2f;
+      text-decoration: underline;
+    }
+    a:hover {
+      color: #d4af37;
+    }
+  </style>
+</head>
+<body>
+  <h1>15-Day HTML + CSS Learning Plan</h1>
+  <div id="plan-container"></div>
+
+  <script>
+    const plan = {
+      "Day 1 – HTML Basics": [
+        ["HTML Introduction", "https://developer.mozilla.org/en-US/docs/Web/HTML"],
+        ["DOCTYPE & Structure", "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/html"],
+        ["Head, Meta, Title", "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/head"],
+        ["Paragraphs & Headings", "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/p"]
+      ],
+      "Day 2 – Text & Formatting": [
+        ["Line Breaks & Emphasis", "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/br"],
+        ["Strong, Em, Mark, Small", "https://developer.mozilla.org/en-US/docs/Web/HTML/Element#text_content"],
+        ["Block vs Inline", "https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements"]
+      ],
+      "Day 3 – Lists & Links": [
+        ["Unordered & Ordered Lists", "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul"],
+        ["Anchor Tags", "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a"],
+        ["URL Paths", "https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_URL"]
+      ],
+      "Day 4 – Images & Embeds": [
+        ["Images and Alt Text", "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img"],
+        ["Figure and Figcaption", "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figure"],
+        ["Iframes", "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe"]
+      ],
+      "Day 5 – Tables & Semantics": [
+        ["Tables", "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table"],
+        ["thead, tbody, td, th", "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/th"],
+        ["Semantic Tags", "https://developer.mozilla.org/en-US/docs/Glossary/Semantics"]
+      ],
+      "Day 6 – Forms Part 1": [
+        ["Form Structure", "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form"],
+        ["Input Types", "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input"],
+        ["Labels & Placeholders", "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label"]
+      ],
+      "Day 7 – Forms Part 2": [
+        ["Select, Textarea", "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select"],
+        ["Radio, Checkbox, Button", "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox"],
+        ["Form Validation", "https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation"]
+      ],
+      "Day 8 – CSS Basics": [
+        ["CSS Introduction", "https://developer.mozilla.org/en-US/docs/Web/CSS"],
+        ["Linking CSS", "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/style"],
+        ["Selectors", "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors"]
+      ],
+      "Day 9 – Box Model": [
+        ["Box Model", "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model"],
+        ["Margin, Border, Padding", "https://developer.mozilla.org/en-US/docs/Web/CSS/margin"],
+        ["Width & Height", "https://developer.mozilla.org/en-US/docs/Web/CSS/width"]
+      ],
+      "Day 10 – Typography & Colors": [
+        ["Font Family", "https://developer.mozilla.org/en-US/docs/Web/CSS/font-family"],
+        ["Line Height & Alignment", "https://developer.mozilla.org/en-US/docs/Web/CSS/line-height"],
+        ["Colors", "https://developer.mozilla.org/en-US/docs/Web/CSS/color"]
+      ],
+      "Day 11 – Positioning": [
+        ["Position Types", "https://developer.mozilla.org/en-US/docs/Web/CSS/position"],
+        ["Z-index", "https://developer.mozilla.org/en-US/docs/Web/CSS/z-index"],
+        ["Overflow", "https://developer.mozilla.org/en-US/docs/Web/CSS/overflow"]
+      ],
+      "Day 12 – Flexbox": [
+        ["Flex Container", "https://developer.mozilla.org/en-US/docs/Web/CSS/flex"],
+        ["Justify & Align", "https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content"],
+        ["Flex Wrap", "https://developer.mozilla.org/en-US/docs/Web/CSS/flex-wrap"]
+      ],
+      "Day 13 – Grid Layout": [
+        ["Grid Intro", "https://developer.mozilla.org/en-US/docs/Web/CSS/grid"],
+        ["Template Areas", "https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-areas"],
+        ["Grid Gap", "https://developer.mozilla.org/en-US/docs/Web/CSS/gap"]
+      ],
+      "Day 14 – Advanced Styling": [
+        ["Media Queries", "https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries"],
+        ["Pseudo Classes", "https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes"],
+        ["Pseudo Elements", "https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements"]
+      ],
+      "Day 15 – Final Project": [
+        ["Build Portfolio", "#"],
+        ["Responsive Form", "#"],
+        ["Review All Topics", "#"]
+      ]
+    };
+
+    const container = document.getElementById("plan-container");
+
+    Object.entries(plan).forEach(([day, topics], dayIndex) => {
+      const dayDiv = document.createElement("div");
+      dayDiv.className = "day";
+
+      const heading = document.createElement("h2");
+      heading.textContent = day;
+      dayDiv.appendChild(heading);
+
+      topics.forEach(([title, link], topicIndex) => {
+        const id = `d${dayIndex}_t${topicIndex}`;
+        const wrapper = document.createElement("div");
+        wrapper.className = "topic";
+
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.id = id;
+        checkbox.checked = localStorage.getItem(id) === "true";
+        checkbox.addEventListener("change", () => {
+          localStorage.setItem(id, checkbox.checked);
+        });
+
+        const label = document.createElement("label");
+        label.setAttribute("for", id);
+        label.innerHTML = `<a href="${link}" target="_blank">${title}</a>`;
+
+        wrapper.appendChild(checkbox);
+        wrapper.appendChild(label);
+        dayDiv.appendChild(wrapper);
+      });
+
+      container.appendChild(dayDiv);
+    });
+  </script>
+</body>
+</html>
